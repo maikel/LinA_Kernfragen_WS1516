@@ -1,0 +1,186 @@
+\documentclass[11pt]{scrartcl}
+
+% Sprache und Schrift
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsthm}
+\usepackage{libertine} \usepackage[libertine]{newtxmath}
+% \usepackage{mathspec}
+
+% Mathematik
+% \usepackage{amsthm}
+
+% bessere Listen
+\usepackage{paralist}
+
+% eigene Umgebungen
+\theoremstyle{definition}
+\newtheorem{frage}{Frage}
+
+% mathematische Aliase
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\sprod}[2]{\left\langle #1, #2 \right\rangle}
+\DeclareMathOperator{\lin}{span}
+\DeclareMathOperator{\Mat}{Mat}
+
+\begin{document}
+{\raggedleft Autor: M. Nadolski \hfill Wintersemester 2015/2016}\\
+E-Mail: nadolski@fu-berlin.de
+
+\begin{center}
+\LARGE\textbf {Kernfragen}\\
+\large ``Lineare Algebra fur Ingenieurwissenschaften''
+\end{center}
+
+\section {Vektorräume}
+
+Im Folgenden sei $K$ ein beliebiger Körper und $V$ ein $K$-Vektorraum.
+
+\begin{frage}
+Was ist ein Körper?
+\end{frage}
+
+\begin{frage}
+Wie ist ein $K$-Vektorraum $(V, +, \cdot)$ definiert?
+\end{frage}
+
+\begin{frage}
+Wie sind die komplexen Zahlen $\C$ definiert? Wie sind $z_1 \cdot z_2$
+und $z_1 + z_2$ für komplexe Zahlen $z_1, z_2 \in \C$ definiert.
+\end{frage}
+
+\begin{frage}
+Sei $z \in \C$ und $\bar z$ die konjugiert komplexe Zahl zu $z$. Wie ist
+$\bar z$ definiert? Bestimmte Real- und Imaginärteil folgender Ausdrücke:
+\begin{enumerate}[(i)]
+    \item $z \bar z$
+    \item $\frac 12 ( z + \bar z )$
+    \item $\frac 12 ( z - \bar z )$
+    \item $z = \frac 1 i$
+    \item $z = \frac 1 {1 - i \sqrt 3}$
+    \item $z = \frac {(-2 + 5i) \cdot (1 + 3i)}{2 + 3i} 
+             - \left( \frac 2 {13} - \frac 3 {13} i \right)$
+    \item $z = e^{i \phi}, \phi \in \R$
+\end{enumerate}
+\end{frage}
+
+\begin{frage}
+Sei $z \in \C$. Bestimme alle Lösungen von:
+\begin{enumerate}[(i)]
+    \item $z^2 = 1$
+    \item $z^2 = -1$
+    \item $z^2 + (1 + i) z + i = 0$
+    \item $z^3 = -i$
+    \item $z^4 = -4$
+\end{enumerate}
+\end{frage}
+
+\begin{frage}
+Wie sind Untervektorräume eines $K$-Vektorraums $V$ definiert?
+\end{frage}
+
+\begin{frage}
+Sei $U \subset V$ eine Menge. Wie ist die lineare H"ulle $\lin U$ definiert?
+\end{frage}
+
+\begin{frage}
+Sei $U \subset V$ eine Menge. Wann ist $U$ ein Erzeugendensystem von $V$?
+\end{frage}
+
+\begin{frage}
+Seien $v_1, \ldots, v_n \in V$. Wann heißen sie linear unabhängig?
+Sei $U \subset V$ eine beliebige Menge. Wann heißt $U$ linear unabhängig?
+\end{frage}
+
+\begin{frage}
+Gebe zwei verschiedene aber äquivalente Definitionen einer Basis von $V$ 
+an. Wie ist die Dimension $\dim_K V$ von $V$ definiert?
+\end{frage}
+
+\begin{frage}
+Bestimme die Dimensionen folgender Vektorr"aume:
+\begin{enumerate}[(i)]
+    \item $\dim_\R \R^2$
+    \item $\dim_\R \C$
+    \item $\dim_\C \C$
+    \item $\dim_\Q \R$
+\end{enumerate}
+\end{frage}
+
+Von nun an sei $V$ ein endlich-dimensionaler Vektorraum
+
+\begin{frage}
+Seien $U,W$ Untervektorräume von $V$. Wie sind Summe $U + W$ und direkte
+Summe $U \oplus W$ definiert.
+\end{frage}
+
+\begin{frage}
+Beweise oder Widerlege: Ist $B_U$  eine Basis von $U$ und $B_W$ eine Basis 
+von $W$, dann ist $B_U \cup B_W$ eine Basis von $U + W$.
+\end{frage}
+
+\begin{frage}
+Bestimme die Dimension des Unterraums von $\R^4$, der von den Vektoren
+\[
+    \begin{pmatrix} 1 \\ -4 \\ -2 \\ 1 \end{pmatrix}, \:
+    \begin{pmatrix} 1 \\ -3 \\ -1 \\ 2 \end{pmatrix}, \:
+    \begin{pmatrix} 3 \\ -8 \\ -2 \\ 7 \end{pmatrix}
+\]
+aufgespannt wird.
+\end{frage}
+
+\begin{frage}
+Gegeben Sei
+\[
+    B = \left\{
+        \begin{pmatrix} 1 \\ 1 \\ 1 \end{pmatrix}, \:
+        \begin{pmatrix} 1 \\ 1 \\ 0 \end{pmatrix}, \:
+        \begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix}
+    \right\}
+\]
+Zeige, dass $B$ eine Basis des $\R^3$ ist!
+\end{frage}
+
+\begin{frage}
+Gegeben Sei eine Menge $M$ von Vektoren des $\R^3$:
+\[
+    M = \left\{
+        \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \:
+        \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}, \:
+        \begin{pmatrix} 2 \\ 5 \\ 7 \end{pmatrix}
+    \right\}
+\]
+Welche Dimension hat $\lin M$? Gebe eine Basis von $\lin M$ an!
+\end{frage}
+
+\begin{frage}
+Gegeben sei eine Menge $M$ von Vektoren des $\R^3$:
+\[
+    M = \left\{ 
+        \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}, \:
+        \begin{pmatrix} 0 \\ 1 \\ 1 \end{pmatrix}
+    \right\}
+\]
+Ergänze $M$ zu einer Basis von $\R^3$!
+\end{frage}
+
+\section {Matrizen und Gauß'sches Eliminationsverfahren}
+
+Von hier an bezeichnen wir mit $\Mat(K, n, m)$ die Menge aller
+$n \times m$-Matrizen mit Eintr"agen aus dem K"orper $K$.
+
+\begin{frage}
+Wie sind Matrizenaddition und -multiplikation definiert? Ist
+$(\Mat(K, n, n), +, \cdot)$ ein K"orper?
+\end{frage}
+
+\begin{frage}
+Wie ist der Spalten- bzw. Zeilenrang einer Matrix $M \in \Mat(\R, n, m)$
+definiert?
+\end{frage}
+
+\end{document}
