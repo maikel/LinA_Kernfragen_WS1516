@@ -1,10 +1,12 @@
-\documentclass[11pt]{scrartcl}
+\documentclass{scrartcl}
 
 % Sprache und Schrift
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{amsthm}
 \usepackage{libertine} \usepackage[libertine]{newtxmath}
+% \usepackage{amsmath, amssymb}
+\usepackage{multicol}
 % \usepackage{mathspec}
 
 % Mathematik
@@ -24,6 +26,9 @@
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\sprod}[2]{\left\langle #1, #2 \right\rangle}
+\let\tmpphi\phi
+\let\phi\varphi
+\let\varphi\tmpphi
 \DeclareMathOperator{\lin}{span}
 \DeclareMathOperator{\Mat}{Mat}
 
@@ -56,6 +61,7 @@ und $z_1 + z_2$ für komplexe Zahlen $z_1, z_2 \in \C$ definiert.
 \begin{frage}
 Sei $z \in \C$ und $\bar z$ die konjugiert komplexe Zahl zu $z$. Wie ist
 $\bar z$ definiert? Bestimmte Real- und Imaginärteil folgender Ausdrücke:
+\begin{multicols}{2}
 \begin{enumerate}[(i)]
     \item $z \bar z$
     \item $\frac 12 ( z + \bar z )$
@@ -64,12 +70,14 @@ $\bar z$ definiert? Bestimmte Real- und Imaginärteil folgender Ausdrücke:
     \item $z = \frac 1 {1 - i \sqrt 3}$
     \item $z = \frac {(-2 + 5i) \cdot (1 + 3i)}{2 + 3i} 
              - \left( \frac 2 {13} - \frac 3 {13} i \right)$
-    \item $z = e^{i \phi}, \phi \in \R$
+    \item $z = e^{i \phi},\: \phi \in \R$
 \end{enumerate}
+\end{multicols}
 \end{frage}
 
 \begin{frage}
 Sei $z \in \C$. Bestimme alle Lösungen von:
+\begin{multicols}{2}
 \begin{enumerate}[(i)]
     \item $z^2 = 1$
     \item $z^2 = -1$
@@ -77,6 +85,7 @@ Sei $z \in \C$. Bestimme alle Lösungen von:
     \item $z^3 = -i$
     \item $z^4 = -4$
 \end{enumerate}
+\end{multicols}
 \end{frage}
 
 \begin{frage}
@@ -100,6 +109,8 @@ Sei $U \subset V$ eine beliebige Menge. Wann heißt $U$ linear unabhängig?
 Gebe zwei verschiedene aber äquivalente Definitionen einer Basis von $V$ 
 an. Wie ist die Dimension $\dim_K V$ von $V$ definiert?
 \end{frage}
+
+\clearpage
 
 \begin{frage}
 Bestimme die Dimensionen folgender Vektorr"aume:
@@ -175,12 +186,101 @@ $n \times m$-Matrizen mit Eintr"agen aus dem K"orper $K$.
 
 \begin{frage}
 Wie sind Matrizenaddition und -multiplikation definiert? Ist
-$(\Mat(K, n, n), +, \cdot)$ ein K"orper?
+$(\Mat(K, n, n), +, \cdot)$ ein Ring? Ist es ein K"orper? Begr"undung!
 \end{frage}
 
 \begin{frage}
 Wie ist der Spalten- bzw. Zeilenrang einer Matrix $M \in \Mat(\R, n, m)$
 definiert?
+\end{frage}
+
+\begin{frage}
+Rechne folgende Produkte aus:
+\begin{enumerate}[(i)]
+\item \[
+M_1 = 
+\begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix} \cdot \begin{pmatrix}
+  1 \\ 0 \\ 0
+\end{pmatrix}, \qquad M_2 =
+\begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix} \cdot \begin{pmatrix}
+  0 \\ 1 \\ 0
+\end{pmatrix} \qquad M_3 =
+\begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix} \cdot \begin{pmatrix}
+  0 \\ 0 \\ 1
+\end{pmatrix}
+\]
+
+\item \[ M_1 =
+\begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1 
+\end{pmatrix} \cdot \begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix}, \qquad M_2 =
+\begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 0 & 1 \\
+  0 & 1 & 0 
+\end{pmatrix} \cdot \begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix}, \qquad M_3 =
+\begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix} \cdot \begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & 0 & 1 \\
+  0 & 1 & 0 
+\end{pmatrix}
+\]
+\item \[ M_1 =a
+\begin{pmatrix}
+  1 & 0 & 0 \\
+  1 & 1 & 0 \\
+  0 & 0 & 1 
+\end{pmatrix} \cdot \begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix} \qquad M_2 =
+\begin{pmatrix}
+  1 & 0 & 1 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1 
+\end{pmatrix} \cdot \begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix}, \qquad M_3 =
+\begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix} \cdot \begin{pmatrix}
+  1 & 0 & 1 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1 
+\end{pmatrix}
+\]
+\end{enumerate}
 \end{frage}
 
 \end{document}
