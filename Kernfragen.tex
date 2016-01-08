@@ -17,7 +17,7 @@
 
 % eigene Umgebungen
 \theoremstyle{definition}
-\newtheorem{frage}{Frage}
+\newtheorem{frage}{Frage}[section]
 
 % mathematische Aliase
 \newcommand{\R}{\mathbb R}
@@ -26,6 +26,8 @@
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\sprod}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\mat}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\renewcommand{\Im}{\mathrm{Im}}
 \let\tmpphi\phi
 \let\phi\varphi
 \let\varphi\tmpphi
@@ -251,7 +253,7 @@ M_1 =
   0 & 1 & 0 
 \end{pmatrix}
 \]
-\item \[ M_1 =a
+\item \[ M_1 =
 \begin{pmatrix}
   1 & 0 & 0 \\
   1 & 1 & 0 \\
@@ -281,6 +283,125 @@ M_1 =
 \end{pmatrix}
 \]
 \end{enumerate}
+\end{frage}
+
+\begin{frage}
+Welche Typen von Elementarmatrizen gibt es? Was haben sie mit dem
+Gauß-Algorithmus zu tun?
+\end{frage}
+
+\begin{frage}
+Im Folgenden ist eine $3\times3$-Matrix gesucht, die bei der
+Mutliplikation von links ...
+\begin{enumerate}[(i)]
+\item ... die erste und zweite Zeile vertauscht.
+\item ... die dritte Zeile durch ein 3-faches ihrer selbst ersetzt.
+\item ... auf die dritte Zeile die zweite Zeile addiert.
+\item ... die Punkte (i)-(iii) in dieser Reihenfolge bewirkt.
+\end{enumerate}
+\end{frage}
+
+\begin{frage}
+Bestimme f"ur die Matrix
+\[ M =
+\begin{pmatrix}
+  1  & 0 & 2 \\
+  2  & 1 & 5 \\
+  3  & 1 & 7
+\end{pmatrix}
+\] die Matrizen $L$ und $R$, so dass $R$ in Zeilenstufenform ist und
+\[ M = L \cdot R \]
+gilt. Schreibe $L$ als Produkt von Elementarmatrizen!
+\end{frage}
+
+\begin{frage}
+Bestimme die L"osungsmenge f"ur das Gleichungssystem
+\begin{align*}
+x + 2 z &= 0\\
+2x + y + 5z &= 0\\
+3x + y + 7z &= 0.
+\end{align*}
+\end{frage}
+
+\begin{frage}
+Untersuche jeweils für die gegebene Matrix $A$, ob das Gleichungssystem
+$A \cdot x = y$ für alle $y \in \R^3$ lösbar ist.
+\begin{multicols}{3}
+\begin{enumerate}[(i)]
+\item $\begin{pmatrix} 1 & 3 & -1 \\ 1 & 5 & 5 \\ 2 & 7 & 1 \end{pmatrix}$
+\item $\begin{pmatrix} 2 & -1 & 3 & 4 \\ 4 & -2 & 6 & 7 \\ -4 & 4 & -6 & -12 \end{pmatrix}$
+\item $\begin{pmatrix} 1 & 2 \\ 3 & 4 \\ 5 & 6 \end{pmatrix}$
+\end{enumerate}
+\end{multicols}
+\end{frage}
+
+\begin{frage}
+Untersuche jede der folgenden Matrizen auf Invertierbarkeit und bestimmte
+gegebenenfalls die inverse Matrix.
+\begin{multicols}{3}
+\begin{enumerate}[(i)]
+\item $\begin{pmatrix} 5 & 3 \\ 3 & 2 \end{pmatrix}$
+\item $\begin{pmatrix} 1 & -2 & 3 \\ 2 & 1 & -4 \\ 1 & -7 & 13\end{pmatrix}$
+\item $\begin{pmatrix} 2 & -1 & 3 \\ 7 & 3 &  0 \\ -1 & 2 & -4\end{pmatrix}$
+\item $\begin{pmatrix} 3 & 4 \\ -1 & 2 \end{pmatrix}$
+\item $\begin{pmatrix} 2 & 3 & -4 \\ 3 & 3 & -1 \\ 0 & 3 & -10\end{pmatrix}$
+\item $\begin{pmatrix} 0 & 0 & 1 & 0 \\ 0 & -1 & 0 & -3 \\ 1 & 2 & 0 & 6 \\ 0 & 0 & 0 & 1 \end{pmatrix}$
+\end{enumerate}
+\end{multicols}
+\end{frage}
+
+\begin{frage} Sei $A \in \Mat(K, n, n)$ invertierbar.
+Beweise
+\[ \left(A^T \right)^{-1} = \left(A^{-1} \right)^T. \]
+\emph{Hinweis:} F"ur alle multiplizierbaren Matrizen $A,B$ gilt
+$(AB)^T = B^T A^T$.
+\end{frage}
+
+\begin{frage}
+Untersuche folgende Abbildungen(!) auf Injektivit"at, Surjektivit"at und Bijektivit"at.
+\begin{enumerate}[(i)]
+\item $\phi\colon \R^2 \to \R^2, \quad \mat{x_1 \\ x_2} \mapsto \mat{1 & 2\\3 & 6} \mat{x_1 \\ x_2}$
+\item $\phi\colon \R^3 \to \R^3, \quad \mat{x_1 \\ x_2 \\ x_3} \mapsto \mat{1 & 0 & 1\\0 & 1 & 1\\0 & 0 & 2} \mat{x_1 \\ x_2 \\ x_3} + \mat{1 \\ 0 \\ 1}$
+\item $\phi\colon \R^m \to \R^m, \quad x \mapsto A x + b$\\ f"ur eine invertierbare Matrix $A \in \Mat(\R, m,m)$ und ein beliebiges $b \in \R^m$.
+Kannst du mit diesem Aufgabenteil die Aufgabenteile (i) und (ii) schneller l"osen?
+\end{enumerate}
+\end{frage}
+
+\section{Lineare Abbildungen}
+
+\begin{frage}Seien $V$ und $W$ $K$-Vektorräume. 
+Wann heißt eine Abbildung $f\colon V \to W$ linear?
+\end{frage}
+
+\clearpage
+
+\begin{frage}
+Bestimme, ob folgende Abbildungen linear sind. Sind sie affin? Bestimme gegebenenfalls eine Matrix $A$ und einen Vektor $b$, für die $f(x) = Ax + b$ gilt.
+\begin{multicols}{2}
+\begin{enumerate}[(i)]
+\item $f\colon \R \to \R, \: x \mapsto 2x - 3$
+\item $f\colon \R^3 \to \R, \: \mat{x \\ y \\ z} \mapsto xy - z$
+\item $f\colon \R^3 \to \R^2, \: \mat{x \\ y \\ z} \mapsto \mat{ x -y \\ 1 + z} $
+\item $f\colon \R^3 \to \R^3, \: \mat{x \\ y \\ z} \mapsto \mat{x + 2z \\ 2x + y + 5z \\ 3x + y  + 7z}$
+\end{enumerate}
+\end{multicols}
+\end{frage}
+
+\begin{frage}
+Seien $V, W$ wieder $K$-Vektorräume und sei $f\colon V \to W$ linear. Wie sind Kern $\ker f$ und Bild $\Im f$ von $f$ defininert? Beweise, dass sie Untervektorräume sind von $V$ bzw. $W$ sind.
+\end{frage}
+
+\begin{frage} Sei $f\colon V \to W$ linear.
+Beweise folgende Aussagen:
+\begin{enumerate}[(i)]
+\item Wenn $f$ injektiv ist, so gilt $\ker f = \{ 0 \}$
+\item Sei $f(x) = Ax$ für eine Matrix $A$. Wenn $f$ surjektiv ist, so hat $A$ vollen Rang.
+\item Eine lineare Abbildung $f\colon \R^n \to \R^n$ ist genau dann injektiv, wenn sie surjektiv ist.
+\end{enumerate}
+\end{frage}
+
+\begin{frage}
+Sei $f\colon V \to W$ linear, $f(v) = Av$ für eine Matrix $A$ und $b \in W$. Wie hängen Kern $\ker f$ und Urbild $f^{-1}(b)$ von $b$ zusammen? 
 \end{frage}
 
 \end{document}
